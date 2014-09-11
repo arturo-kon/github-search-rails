@@ -11,16 +11,16 @@ It can sort by stars, forks and updated in ascending or descending order.
 Gems
 -----------
 
-gem 'sqlite3'
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
-gem 'jbuilder', '~> 2.0'
-gem 'bootstrap-sass'
-gem 'omniauth'
-gem 'omniauth-github'
-gem 'octokit'
-gem 'font-awesome-rails'
+gem 'sqlite3'  
+gem 'sass-rails', '~> 4.0.3'  
+gem 'uglifier', '>= 1.3.0'  
+gem 'jquery-rails'  
+gem 'jbuilder', '~> 2.0'  
+gem 'bootstrap-sass'  
+gem 'omniauth'  
+gem 'omniauth-github'  
+gem 'octokit'  
+gem 'font-awesome-rails'  
 
 Ruby on Rails
 -------------
@@ -34,27 +34,11 @@ This application requires:
 Getting Started
 ---------------
 
-Simply run:
-``bundle install``
-``rake db:migrate``
-``rake db:seed``
-``rails server``
+Simply run:  
+
+``bundle install``  
+``rake db:migrate``  
+``rake db:seed``  
+``rails server``  
 
 
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
