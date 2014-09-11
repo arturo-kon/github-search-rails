@@ -1,6 +1,15 @@
 language: ruby
+bundler_args: --without production --path=~/.bundle
 rvm:
   - 2.1.2
+before_install:
+  - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+  - gem install bundler bundle_cache
+  - bundle_cache_install
 before_script:
-  - RAILS_ENV=test bundle exec rake db:migrate
+  - cp config/database.travis.yml config/database.yml
+  - bundle exec rake db:create db:migrate db:schema:load
 script: 'rspec'
+env:
+  global:
+  - RAILS_ENV=test
