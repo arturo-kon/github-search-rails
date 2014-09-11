@@ -7,7 +7,7 @@ before_install:
 before_script:
   - cp config/database.travis.yml config/database.yml
   - bundle exec rake db:create db:migrate db:schema:load
-script: 'rspec'
+script: bundle exec rspec
 env:
   global:
   - RAILS_ENV=test
