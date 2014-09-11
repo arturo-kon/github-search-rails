@@ -10,7 +10,7 @@
   </div>
   <%= f.label 'Sort By', :class => 'control-label', :for => 'filter_sort' %>
   <div class="form-group">
-    <%= f.select :sort, options_for_select(['Stars', 'Forks', 'Updated'], params[:filter].present? ? params[:filter][:sort] : 'Stars') %>
+    <%= f.select :sort, options_for_select(['Stars', 'Forks'], params[:filter].present? ? params[:filter][:sort] : 'Stars') %>
   </div>
   <%= f.label 'Sort Order', :class => 'control-label', :for => 'filter_sort_order' %>
   <div class="form-group">

@@ -8,7 +8,7 @@ App will take a search string and call github api to filter repositories.
 
 Filtering by language is also an option, along with appropriate pagination.
 
-It can sort by stars, forks and updated in ascending or descending order.
+It can sort by stars or forks in ascending or descending order.
 
 
 Gems
