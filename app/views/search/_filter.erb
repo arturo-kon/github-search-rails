@@ -1,0 +1,29 @@
+<%= form_for(:filter, :html => {:method => 'get', :role => 'form', :class => 'form-inline'}) do |f| %>
+  <legend>Search Repos</legend>
+  <%= f.label 'Search', :class => 'control-label', :for => 'filter_search' %>
+  <div class="form-group">
+    <%= f.text_field :search, :placeholder => 'Filter by search string...', :value => params[:filter].present? ? params[:filter][:search] : '' %>
+  </div>
+  <%= f.label 'Language', :class => 'control-label', :for => 'filter_language' %>
+  <div class="form-group">
+    <%= f.text_field :language, :placeholder => 'Filter by language...', :value => params[:filter].present? ? params[:filter][:language] : '' %>
+  </div>
+  <%= f.label 'Sort By', :class => 'control-label', :for => 'filter_sort' %>
+  <div class="form-group">
+    <%= f.select :sort, options_for_select(['Stars', 'Forks', 'Updated'], params[:filter].present? ? params[:filter][:sort] : 'Stars') %>
+  </div>
+  <%= f.label 'Sort Order', :class => 'control-label', :for => 'filter_sort_order' %>
+  <div class="form-group">
+    <%= f.select :sort_order, options_for_select(['Asc', 'Desc'], params[:filter].present? ? params[:filter][:sort_order] : 'Desc') %>
+  </div>
+  <%= f.label 'Per Page', :class => 'control-label', :for => 'filter_per_page' %>
+  <div class="form-group">
+    <%= f.select :per_page, options_for_select([10, 25, 50, 100], params[:filter].present? ? params[:filter][:per_page] : 25) %>
+  </div>
+  <div class="form-group">
+    <div class="controls">
+      <%= f.submit 'Go', :class => 'btn' %>
+      <%= f.submit 'Reset', :class => 'btn' %>
+    </div>
+  </div>
+<% end %>

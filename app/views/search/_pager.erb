@@ -1,0 +1,18 @@
+<br />
+Total repos: <%= @count %>
+<br />
+<% if (@total_pages && @total_pages > 1) %>
+<ul class="pagination">
+  <li <%= 'class=disabled' if @current_page == 1 %>>
+    <%= link_to '&laquo;'.html_safe, params.merge({:page => 1}), :action => :index %>
+  </li>
+  <% @page_numbers.each do |page| %>
+    <li <%= 'class=active' if @current_page == page %>>
+      <%= link_to page, params.merge({:page => page}), :action => :index %>
+    </li>
+  <% end %>
+  <li <%= 'class=disabled' if @current_page == @total_pages %>>
+    <%= link_to '&raquo;'.html_safe, params.merge({:page => @total_pages}), :action => :index %>
+  </li>
+</ul>
+<% end %>

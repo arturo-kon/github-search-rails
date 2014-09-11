@@ -1,0 +1,31 @@
+<h3>Welcome</h3>
+<%= render 'filter' %>
+<br />
+
+<%= render 'pager' %>
+<table class="table table-stripped">
+  <tr>
+    <th>Name</th>
+    <th>Full Name</th>
+    <th>Owner</th>
+    <th>Language</th>
+    <th>Stars</th>
+    <th>Forks</th>
+    <th>Updated</th>
+  </tr>
+  <tbody id="repos">
+    <% @repos.each do |repo| %>
+      <tr>
+        <td><%= repo.name %></td>
+        <td><%= repo.full_name %></td>
+        <td><%= repo.owner.login %></td>
+        <td><%= repo.language %></td>
+        <td><%= repo.stargazers_count %></td>
+        <td><%= repo.forks_count %></td>
+        <td><%= repo.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render 'pager' %>
