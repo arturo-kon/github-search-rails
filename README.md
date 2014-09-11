@@ -1,6 +1,9 @@
 Github Search
 ================
 
+[![Coverage Status](https://img.shields.io/coveralls/arturo-kon/github-search-rails/master.svg)](https://coveralls.io/r/arturo-kon/github-search-rails)
+[![Build Status](https://img.shields.io/travis/arturo-kon/github-search-rails/master.svg)](https://travis-ci.org/arturo-kon/github-search-rails)
+
 App will take a search string and call github api to filter repositories.
 
 Filtering by language is also an option, along with appropriate pagination.
