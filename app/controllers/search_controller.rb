@@ -4,20 +4,21 @@ class SearchController < ApplicationController
     @repos = []
     @page_numbers = []
     params[:filter] = nil if params[:commit] == 'Reset'
-    if params[:filter] && params[:filter][:search]
+    filter = params[:filter]
+    if filter && filter[:search]
       client = Octokit::Client.new(:access_token => current_user.token)
       page = params[:page].present? ? params[:page].to_i : 1
       opts = {
-        :per_page => params[:filter][:per_page],
-        :sort => params[:filter][:sort].downcase,
-        :order => params[:filter][:sort_order].downcase,
+        :per_page => filter[:per_page],
+        :sort => filter[:sort].downcase,
+        :order => filter[:sort_order].downcase,
         :page => page
       }
-      search = params[:filter][:language] ? params[:filter][:search] + '+language:' + params[:filter][:language] : params[:filter][:search]
+      search = (filter[:language] && !filter[:language].empty?) ? filter[:search] + '+language:' + filter[:language] : filter[:search]
       result = client.search_repositories(search, opts)
       @count = result.total_count
-      if @count > params[:filter][:per_page].to_i
-        @total_pages = (result.total_count.to_f / params[:filter][:per_page].to_i).ceil
+      if @count > filter[:per_page].to_i
+        @total_pages = (result.total_count.to_f / filter[:per_page].to_i).ceil
         @current_page = page
         @page_numbers = [@current_page]
         2.times do
