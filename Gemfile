@@ -16,12 +16,12 @@ group :development do
   gem 'binding_of_caller', :platforms=>[:mri_20]
   gem 'quiet_assets'
   gem 'rails_layout'
-  gem 'sqlite3'
 end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'sqlite3'
 end
 group :production do
   gem 'unicorn'
