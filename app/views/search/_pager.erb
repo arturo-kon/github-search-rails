@@ -1,6 +1,10 @@
 <br />
 Total repos: <%= @count %>
 <br />
+<% if @total_count > @count %>
+<span style="font-size: 10px">*<%= @total_count %> repos in github, but only able to filter and sort 1000 results.</span>
+<% end %>
+<br />
 <% if (@total_pages && @total_pages > 1) %>
 <ul class="pagination">
   <li <%= 'class=disabled' if @current_page == 1 %>>

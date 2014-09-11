@@ -16,9 +16,12 @@ class SearchController < ApplicationController
       }
       search = (filter[:language] && !filter[:language].empty?) ? filter[:search] + '+language:' + filter[:language] : filter[:search]
       result = client.search_repositories(search, opts)
-      @count = result.total_count
+      @count = @total_count = result.total_count
+
+      # This is a limit on github api https://developer.github.com/v3/search/#about-the-search-api
+      @count = 1000 if @count > 1000
       if @count > filter[:per_page].to_i
-        @total_pages = (result.total_count.to_f / filter[:per_page].to_i).ceil
+        @total_pages = (@count.to_f / filter[:per_page].to_i).ceil
         @current_page = page
         @page_numbers = [@current_page]
         2.times do
