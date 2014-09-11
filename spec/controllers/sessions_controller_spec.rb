@@ -39,7 +39,6 @@ describe SessionsController, :omniauth do
       delete :destroy
       expect(response).to redirect_to root_url
     end
-
   end
 
 end

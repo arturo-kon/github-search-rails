@@ -10,6 +10,7 @@ gem 'bootstrap-sass'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'octokit'
+gem 'faraday-http-cache'
 gem 'font-awesome-rails'
 group :development do
   gem 'better_errors'
@@ -34,4 +35,6 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'coveralls', require: false
+  gem 'webmock'
+  gem 'sinatra'
 end

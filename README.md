@@ -1,6 +1,7 @@
 Github Search
 ================
 
+[![Coverage Status](https://coveralls.io/repos/arturo-kon/github-search-rails/badge.png)](https://coveralls.io/r/arturo-kon/github-search-rails)
 [![Coverage Status](https://img.shields.io/coveralls/arturo-kon/github-search-rails/master.svg)](https://coveralls.io/r/arturo-kon/github-search-rails)
 [![Build Status](https://img.shields.io/travis/arturo-kon/github-search-rails/master.svg)](https://travis-ci.org/arturo-kon/github-search-rails)
 
